@@ -1,8 +1,8 @@
 storage "dynamodb" {
-  ha_enabled = "true"
+  ha_enabled    = "true"
   redirect_addr = "%%VAULT_REDIRECT_ADDR%%"
-  region     = "%%AWS_REGION%%"
-  table      = "%%AWS_DYNAMODB_TABLE%%"
+  region        = "%%AWS_REGION%%"
+  table         = "%%AWS_DYNAMODB_TABLE%%"
 }
 
 listener "tcp" {
