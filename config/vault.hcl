@@ -11,3 +11,5 @@ listener "tcp" {
   tls_cert_file = "%%TLS_CERT_FILE%%"
   tls_key_file = "%%TLS_KEY_FILE%%"
 }
+
+disable_mlock = true
