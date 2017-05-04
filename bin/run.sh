@@ -9,4 +9,6 @@ sed -i ${VAULT_CONFIG} \
   -e "s|%%TLS_CERT_FILE%%|${TLS_CERT_FILE}|" \
   -e "s|%%TLS_KEY_FILE%%|${TLS_KEY_FILE}|"
 
+./bin/overlord.sh &&
+
 vault server -config=${VAULT_CONFIG}

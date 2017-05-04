@@ -93,9 +93,9 @@ while true; do
     if [[ ${OVERLORD_DAEMON} == 'false' ]]; then
       break
     fi
-    sleep 30
-  else
-    announce 'sleeping for 10s.'
     sleep 10
+  else
+    announce 'sleeping for 1s.'
+    sleep 1
   fi
 done
