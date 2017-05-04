@@ -20,14 +20,8 @@ export VAULT_CLUSTER_ADDR=${VAULT_CLUSTER_ADDR:-""}
 
 if [[ ${TLS_DISABLE} == '0' ]]; then
   export VAULT_ADDR='https://127.0.0.1:8200'
-  if [[ -n ${VAULT_ADVERTISE_IP} ]]; then
-    export VAULT_ADVERTISE_ADDR=https://${VAULT_ADVERTISE_IP}:8200
-  fi
 else
   export VAULT_ADDR='http://127.0.0.1:8200'
-  if [[ -n ${VAULT_ADVERTISE_IP} ]]; then
-    export VAULT_ADVERTISE_ADDR=http://${VAULT_ADVERTISE_IP}:8200
-  fi
 fi
 
 exec "$@"
