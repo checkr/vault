@@ -19,6 +19,7 @@ sed -i ${VAULT_CONFIG} \
   -e "s|%%AWS_REGION%%|${AWS_REGION}|" \
   -e "s|%%AWS_DYNAMODB_TABLE%%|${AWS_DYNAMODB_TABLE}|" \
   -e "s|%%VAULT_REDIRECT_ADDR%%|${VAULT_REDIRECT_ADDR}|" \
+  -e "s|%%VAULT_CLUSTER_ADDR%%|${VAULT_CLUESTER_ADDR}|" \
   -e "s|%%TLS_DISABLE%%|${TLS_DISABLE}|" \
   -e "s|%%TLS_CERT_FILE%%|${TLS_CERT_FILE}|" \
   -e "s|%%TLS_KEY_FILE%%|${TLS_KEY_FILE}|"

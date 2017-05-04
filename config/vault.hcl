@@ -1,6 +1,7 @@
 storage "dynamodb" {
   ha_enabled    = "true"
   redirect_addr = "%%VAULT_REDIRECT_ADDR%%"
+  cluster_addr  = "%%VAULT_CLUSTER_ADDR%%"
   region        = "%%AWS_REGION%%"
   table         = "%%AWS_DYNAMODB_TABLE%%"
 }
