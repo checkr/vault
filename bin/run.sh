@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[[ ${DEBUG} == 'true' ]] && set -x
+set -e
 
 sed -i ${VAULT_CONFIG} \
   -e "s|%%AWS_REGION%%|${AWS_REGION}|" \
@@ -8,6 +8,13 @@ sed -i ${VAULT_CONFIG} \
   -e "s|%%TLS_DISABLE%%|${TLS_DISABLE}|" \
   -e "s|%%TLS_CERT_FILE%%|${TLS_CERT_FILE}|" \
   -e "s|%%TLS_KEY_FILE%%|${TLS_KEY_FILE}|"
+
+_term() { 
+  echo "Caught SIGTERM signal!" 
+  kill "$child"
+}
+
+trap _term SIGTERM
 
 # Run a command in the background.
 _evalBg() {
@@ -17,4 +24,7 @@ _evalBg() {
 cmd="./bin/overlord.sh";
 _evalBg "${cmd}";
 
-vault server -config=${VAULT_CONFIG}
+vault server -config=${VAULT_CONFIG} &
+
+child=$! 
+wait "$child"

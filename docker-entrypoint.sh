@@ -1,6 +1,6 @@
 #!/bin/bash
+
 set -e
-[[ ${DEBUG} == 'true' ]] && set -ex
 
 export OVERLORD_DAEMON=${OVERLORD_DAEMON:=true}
 export VAULT_CONFIG=${VAULT_CONFIG:=/vault/vault.hcl}

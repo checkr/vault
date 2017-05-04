@@ -1,7 +1,5 @@
 #!/bin/bash
 
-[[ ${DEBUG} == 'true' ]] && set -x
-
 set -o errexit
 
 function failed() {
