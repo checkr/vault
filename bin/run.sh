@@ -29,7 +29,7 @@ sed -i ${VAULT_CONFIG} \
 
 _term() { 
   echo "Caught SIGTERM signal!" 
-  kill "$child"
+  kill -SIGTERM "$child"
 }
 
 trap _term SIGTERM
