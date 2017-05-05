@@ -9,6 +9,10 @@ do
       VAULT_REDIRECT_ADDR="${i#*=}"
       shift # past argument=value
       ;;
+    -c=*|--cluster-url=*)
+      VAULT_CLUSTER_ADDR="${i#*=}"
+      shift # past argument=value
+      ;;
     *)
       # unknown option
       ;;
