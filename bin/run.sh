@@ -42,7 +42,7 @@ _evalBg() {
 cmd="./bin/overlord.sh";
 _evalBg "${cmd}";
 
-vault server -config=${VAULT_CONFIG} &
+vault server -log-level=trace -config=${VAULT_CONFIG} &
 
 child=$! 
 wait "$child"
