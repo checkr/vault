@@ -8,7 +8,7 @@ export VAULT_SKIP_VERIFY=${VAULT_SKIP_VERIFY:=false}
 export TLS_DISABLE=${TLS_DISABLE:=1}
 export TLS_CERT_FILE=${TLS_CERT_FILE:=/vault/certs/cert.pem}
 export TLS_KEY_FILE=${TLS_KEY_FILE:=/vault/certs/key.pem}
-export RECOVERY_MODE=${RECOVERY_MODE:=1}
+export RECOVERY_MODE=${RECOVERY_MODE:=0}
 export VAULT_ADMIN_PASSWORD=${VAULT_ADMIN_PASSWORD:=""}
 export VAULT_UNSEAL_KEY=${VAULT_UNSEAL_KEY:-""}
 export AWS_REGION=${AWS_REGION:-"us-east-1"}

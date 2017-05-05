@@ -5,12 +5,16 @@ set -e
 for i in "$@"
 do
   case $i in
-    -r=*|--redirect-url=*)
+    --redirect-url=*)
       VAULT_REDIRECT_ADDR="${i#*=}"
       shift # past argument=value
       ;;
-    -c=*|--cluster-url=*)
+    --cluster-url=*)
       VAULT_CLUSTER_ADDR="${i#*=}"
+      shift # past argument=value
+      ;;
+    --recovery=*)
+      RECOVERY_MODE="${i#*=}"
       shift # past argument=value
       ;;
     *)
