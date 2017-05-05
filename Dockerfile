@@ -17,5 +17,8 @@ COPY docker-entrypoint.sh /
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
+RUN mkdir -p /etc/secrets
+RUN chown vault:vault /etc/secrets
+
 USER vault
 CMD [ "/vault/bin/run.sh" ]
