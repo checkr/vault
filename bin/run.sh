@@ -7,6 +7,7 @@ do
   case $i in
     --redirect-url=*)
       VAULT_REDIRECT_ADDR="${i#*=}"
+      VAULT_ADDR="${i#*=}"
       shift # past argument=value
       ;;
     --cluster-url=*)
