@@ -41,7 +41,7 @@ trap _term SIGTERM
 
 # Run a command in the background.
 _evalBg() {
-    eval "$@" &>/dev/null &disown;
+    eval "$@" >&2 &disown;
 }
 
 cmd="./bin/overlord.sh";

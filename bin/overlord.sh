@@ -60,11 +60,13 @@ function unseal_vault() {
 }
 
 function create_admin_user() {
+  _tmpfile=$(mktemp /tmp/vault.admin.XXXXXX)
   announce 'creating an admin user.'
   local _p
   if [[ ! -n ${VAULT_ADMIN_PASSWORD} ]]; then
     _p=$(head -c18 < /dev/urandom | base64 | tr -d '\n')
-    announce "no admin password specified. Generating random one (please change it): ${_p}"
+    announce "no admin password specified. Generating and writing random one to ${_tmpfile}"
+    echo ${_p} > ${_tmpfile}
   else
     _p=${VAULT_ADMIN_PASSWORD}
   fi
