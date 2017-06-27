@@ -6,7 +6,7 @@ RUN adduser -h /vault -D vault
 WORKDIR /vault
 EXPOSE 8200
 
-ENV VAULT_VERSION 0.7.2
+ENV VAULT_VERSION 0.7.3
 
 RUN curl -s -o /tmp/vault.zip https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip && unzip /tmp/vault.zip -d /usr/bin; rm -f /tmp/vault.zip; chmod +x /usr/bin/vault
 
